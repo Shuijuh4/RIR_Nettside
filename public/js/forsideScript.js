@@ -1,3 +1,4 @@
+console.log("SCRIPT LOADED");
 let classes = [];
 const listeners = [];
 
