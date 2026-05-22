@@ -1,12 +1,13 @@
 const { TableClient } = require("@azure/data-tables");
 
 module.exports = async function (context, req) {
+    
+    context.log("CONNECTION STRING:", process.env.AZURE_STORAGE_CONNECTION_STRING);
     try {
         const client = TableClient.fromConnectionString(
             process.env.AZURE_STORAGE_CONNECTION_STRING,
             "Klasser"
         );
-        context.log("CONNECTION STRING:", process.env.AZURE_STORAGE_CONNECTION_STRING);
         const result = [];
         for await (const entity of client.listEntities({
             queryOptions: { filter: "PartitionKey eq 'RIR_Aarodal'" }
