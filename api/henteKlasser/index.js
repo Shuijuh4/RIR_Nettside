@@ -6,7 +6,7 @@ module.exports = async function (context, req) {
             process.env.AZURE_STORAGE_CONNECTION_STRING,
             "Klasser"
         );
-
+        context.log("CONNECTION STRING:", process.env.AZURE_STORAGE_CONNECTION_STRING);
         const result = [];
         for await (const entity of client.listEntities({
             queryOptions: { filter: "PartitionKey eq 'RIR_Aarodal'" }
