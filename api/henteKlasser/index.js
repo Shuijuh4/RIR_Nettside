@@ -1,7 +1,8 @@
 const { TableClient } = require("@azure/data-tables");
 
 module.exports = async function (context, req) {
-    context.log("CONN:", process.env.AZURE_STORAGE_CONNECTION_STRING);
+    console.log("🔥 FUNCTION START");
+    context.log("🔥 FUNCTION START");
     try {
         const client = TableClient.fromConnectionString(
             process.env.AZURE_STORAGE_CONNECTION_STRING,
