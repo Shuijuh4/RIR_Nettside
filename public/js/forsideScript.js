@@ -142,7 +142,6 @@ const classEvent = (event, classObj, element) => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("SCRIPT LOADED");
     let handler = [];
     const classForm = document.querySelector("#newClassForm");
     
@@ -185,5 +184,4 @@ document.addEventListener("DOMContentLoaded", () => {
         classForm.addEventListener("submit", handler);
         addListener(classForm, "submit", handler);
     }
-    console.log("SCRIPT LOADED");
 });
