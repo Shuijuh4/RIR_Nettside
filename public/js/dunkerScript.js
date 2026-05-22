@@ -457,7 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
     table.innerHTML = `<tr>
         <th>Navn/Størrelse</th>
         <th>Mengde per stabel</th>
-        <th>Beholdning i stabler</th>
+        <th>Antall stabler</th>
         <th>Handling</th>
     </tr>`;
 
