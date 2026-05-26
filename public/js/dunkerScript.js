@@ -87,7 +87,7 @@ const changeAmount = (sign) => {
 
         localStorage.setItem("classInfo", JSON.stringify(classInfo));
         if (logButton) {
-            classInfo.info[classIndexRow].logg.sort((a, b) => convertDate(b[0]) - convertDate(a[0])).slice(0, 50);
+            classInfo.info[classIndexRow].logg = classInfo.info[classIndexRow].logg.sort((a, b) => convertDate(b[0]) - convertDate(a[0])).slice(0, 50);
             logButton.dataset.array = JSON.stringify(classInfo.info[classIndexRow].logg);
         }
     }
