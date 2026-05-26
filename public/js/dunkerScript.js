@@ -154,8 +154,12 @@ const removeLog = (backgroundLog) => {
 
 
 const convertDate = (dateStr) => {
-    const [day, month, year] = dateStr.split(".");
-    return new Date(`${year}-${month}-${day}`);
+    const [datePart, timePart] = dateString.split(" ");
+
+    const [day, month, year] = datePart.split(".");
+    const [hours, minutes, seconds] = timePart.split(":");
+
+    return new Date(year, month - 1, day, hours, minutes, seconds);
 }
 
 const logEvent = (logButton) => {
