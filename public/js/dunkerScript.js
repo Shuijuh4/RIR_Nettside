@@ -221,7 +221,6 @@ const logEvent = (logButton) => {
     hrow.appendChild(th1);
     hrow.appendChild(th2);
 
-
     const logInfo = JSON.parse(logButton.dataset.array);
     logInfo.sort((a, b) => convertDate(b[0]) - convertDate(a[0]));
 
@@ -229,11 +228,17 @@ const logEvent = (logButton) => {
         const row = table.insertRow();
         const c1 = row.insertCell(0);
         const c2 = row.insertCell(1);
-
-        c1.textContent = logInfo[i][0];
+    
+        const date = new Date(logInfo[i][0]);
+    
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const year = date.getFullYear();
+    
+        c1.textContent = `${day}.${month}.${year}`;
         c2.textContent = logInfo[i][1];
     }
-
+    
     logObj.appendChild(table);
     container.appendChild(logObj);
     backgroundLog.appendChild(container);
