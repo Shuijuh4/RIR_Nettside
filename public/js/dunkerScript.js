@@ -154,6 +154,10 @@ const removeLog = (backgroundLog) => {
 
 
 const convertDate = (dateStr) => {
+     if (!dateStr || typeof dateStr !== "string") {
+        return new Date(0); // fallback
+    }
+    
     const [datePart, timePart] = dateStr.split(" ");
 
     const [day, month, year] = datePart.split(".");
