@@ -237,7 +237,7 @@ const logEvent = (logButton) => {
         const c1 = row.insertCell(0);
         const c2 = row.insertCell(1);
     
-        const date = convertToDate(logInfo[i][0]);
+        const date = convertDate(logInfo[i][0]);
     
         const day = String(date.getDate()).padStart(2, "0");
         const month = String(date.getMonth() + 1).padStart(2, "0");
